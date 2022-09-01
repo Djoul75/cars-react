@@ -44,16 +44,26 @@ class Mycars extends Component {
 
               <button onClick={this.addTenYears}>+ 10 ans</button>
 
+              <table className='carsTable'>
 
-              {
-                this.state.voitures.map(({name, color, year}, index) => {
-                  return(
-                    <div key={index}>
-                      <Car nom={name} color={color} year={this.getAge(year)} />
-                    </div>
-                  )
-                })
-              }
+                <tr>
+                  <th>Marque</th>
+                  <th>Age</th>
+                  <th>Couleur</th>
+                </tr>
+
+                {
+                  this.state.voitures.map(({name, color, year}, index) => {
+                    return(
+                      <Fragment key={index}>
+                        <Car nom={name} color={color} year={this.getAge(year)} />
+                      </Fragment>
+                    )
+                  })
+                }
+
+              </table>
+
           </Fragment>
 
 
